@@ -11,8 +11,29 @@ $(document).ready(function(){
 		getNext();
 	});
 	$("#addUserBtn").on('click',function(){
-		addUser();
+    var title = $("#addTitle").html()
+    if(title == '添加员工'){
+      addUser('2');
+		}else if(title == '添加清洁工'){
+      addUser('3');
+		}
 	})
+
+	// 点击添加清洁工按钮
+	$("#addCleaner").on('click',function(){
+    $('#addUser').modal('show');
+    // 修改页面中的值
+		var title = $("#cleanerTitle").html()
+    $('#addTitle').html(title);
+  })
+
+	//添加员工
+  $("#addUsers").on('click',function(){
+    $('#addUser').modal('show');
+    var title = $("#userTitle").html()
+    $('#addTitle').html(title);
+  })
+
 
 })
 
@@ -142,7 +163,7 @@ function delUser(event){
 
 }
 
-function addUser(){
+function addUser(power){
 	if(isEmptyString($("#inputAccount").val())||isEmptyString($("#inputPwd").val()))
 		alert("请填写全内容");
 	else{
@@ -158,7 +179,7 @@ function addUser(){
 				"IDnumber":$("#IDnumber").val(),
 				"money":$("#money").val(),
 				"phonenumber":$("#phonenumber").val(),
-				"power":"2"
+				"power":power
 			},
 			success:function(data){
 				if(data.code==0){

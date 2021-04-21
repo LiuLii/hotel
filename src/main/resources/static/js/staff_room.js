@@ -153,7 +153,7 @@ function chooseRoomBtn(event){
 	var roomid=$(event.target).data("roomid");
 	choose=roomid;
 	for(i in list){
-		if(list[i].roomid=roomid){
+		if(list[i].roomid==roomid){
 			$("span").filter("#inputLocal").text(list[i].local);
 		}
 	}
