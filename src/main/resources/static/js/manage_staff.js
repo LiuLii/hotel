@@ -187,6 +187,11 @@ function addUser(power){
 					$('#addUser').modal('toggle');
 					$("#inputAccount").val("");
 					$("#inputPwd").val("")
+					$("#username").val("")
+					$("#age").val("")
+					$("#IDnumber").val("")
+					$("#money").val("")
+					$("#phonenumber").val("")
 					getStaffList();
 				}
 				else
