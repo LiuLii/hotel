@@ -80,7 +80,7 @@ function getStaffList(){
 					$("#pre").css("display","block");
 					$("#next").css("display","block");
 					$("#staffList").empty();
-					$("#staffList").append("<tr><th>账号</th><th>员工号</th><th>姓名</th><th>年龄</th><th>职位</th><th>联系方式</th><th>操作</th></tr>")
+					$("#staffList").append("<tr><th>账号</th><th>身份证号</th><th>姓名</th><th>年龄</th><th>职位</th><th>联系方式</th><th>操作</th></tr>")
 					for(i in list){
 						btnStr="<input type=\"button\" id=\"delUser\" data-userid=\""+list[i].userid+"\" class=\"btn btn-danger\" value=\"删除\"/>"
 						htmlStr="<tr data-userid=\""+list[i].userid+"\"><td>"+list[i].useraccount+"</td><td>"+list[i].idnumber+"</td><td>"+list[i].username+"</td><td>"+list[i].age+"</td><td>"+(list[i].power=='2'?"员工":"清洁工")+"</td><td>"+list[i].phonenumber+"</td><td>"+btnStr+"</td></tr>";
