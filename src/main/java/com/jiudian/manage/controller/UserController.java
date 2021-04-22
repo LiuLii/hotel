@@ -147,7 +147,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/getUserByPower.do")
-    public Map getUserByPower(@RequestParam int power,@RequestParam int pageNum,@RequestParam int pageSize){
+    public Map getUserByPower(@RequestParam String power,@RequestParam int pageNum,@RequestParam int pageSize){
         List<User> Users = userService.getUserByPower(power,pageNum,pageSize);
         StateSignal signal = new StateSignal();
         if(Users!=null){

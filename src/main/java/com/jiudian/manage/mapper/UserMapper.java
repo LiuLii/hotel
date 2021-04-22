@@ -20,7 +20,7 @@ public interface UserMapper {
 
     List<User> getAllUser();
 
-    List<User> selectByPower(Integer power);
+    List<User> selectByPower(String power);
 
     User selectByAccount(String useraccount);
 }

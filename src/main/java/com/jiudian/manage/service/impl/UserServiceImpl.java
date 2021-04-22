@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean addUser(User user){
-        user.setIdnumber(UUIDUtil.generateShortUuid());
+//        user.setIdnumber(UUIDUtil.generateShortUuid());
         int insert = userMapper.insertSelective(user);
         return insert>0?true:false;
     }
@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserByPower(int power,int pageNum,int pageSize) {
+    public List<User> getUserByPower(String power,int pageNum,int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         return userMapper.selectByPower(power);
     }

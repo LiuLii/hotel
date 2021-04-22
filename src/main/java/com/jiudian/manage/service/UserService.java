@@ -56,7 +56,7 @@ public interface UserService {
      * @param power
      * @return
      */
-    public List<User> getUserByPower(int power,int pageNum,int pageSize);
+    public List<User> getUserByPower(String power,int pageNum,int pageSize);
 
     /**
      * 登录验证

@@ -63,7 +63,7 @@ function getStaffList(){
 		data:{
 			"pageNum":pageNum,
 			"pageSize":pageSize,
-			"power":"2"
+			"power":"2,3"
 		},
 		success:function(data){
 			if(data.code=="0"){
@@ -83,7 +83,7 @@ function getStaffList(){
 					$("#staffList").append("<tr><th>账号</th><th>员工号</th><th>姓名</th><th>年龄</th><th>职位</th><th>联系方式</th><th>操作</th></tr>")
 					for(i in list){
 						btnStr="<input type=\"button\" id=\"delUser\" data-userid=\""+list[i].userid+"\" class=\"btn btn-danger\" value=\"删除\"/>"
-						htmlStr="<tr data-userid=\""+list[i].userid+"\"><td>"+list[i].useraccount+"</td><td>"+list[i].idnumber+"</td><td>"+list[i].username+"</td><td>"+list[i].age+"</td><td>"+"员工"+"</td><td>"+list[i].phonenumber+"</td><td>"+btnStr+"</td></tr>";
+						htmlStr="<tr data-userid=\""+list[i].userid+"\"><td>"+list[i].useraccount+"</td><td>"+list[i].idnumber+"</td><td>"+list[i].username+"</td><td>"+list[i].age+"</td><td>"+(list[i].power=='2'?"员工":"清洁工")+"</td><td>"+list[i].phonenumber+"</td><td>"+btnStr+"</td></tr>";
 						$("#staffList").append(htmlStr);
 						//console.log(htmlStr);
 						l++;
@@ -176,7 +176,7 @@ function addUser(power){
 				"password":$("#inputPwd").val(),
 				"username":$("#username").val(),
 				"age":$("#age").val(),
-				"IDnumber":$("#IDnumber").val(),
+				"idnumber":$("#IDnumber").val(),
 				"money":$("#money").val(),
 				"phonenumber":$("#phonenumber").val(),
 				"power":power
